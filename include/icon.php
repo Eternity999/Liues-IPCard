@@ -64,6 +64,8 @@ if(strpos($weather,'晴') !== false){
 }elseif(strpos($weather,'风') !== false){
     imagecopy($dst_im, $sha_im, $weather_icon_x, $weather_icon_y, 0, 0,$sha_w, $sha_h);
 }else{
-    imagecopy($dst_im, $unkonw_im, $weather_icon_x, $weather_icon_y, 0, 0,$unkonw_w, $unkonw_h);
+    $font = realpath('font/msyh.ttf');
+    imagettftext($dst_im, 11, 0, 160, 45, imagecolorallocate($dst_im, 0,51,78), $font, '此IP无法获取位置信息'.$reporttime);
+    //imagecopy($dst_im, $unkonw_im, $weather_icon_x, $weather_icon_y, 0, 0,$unkonw_w, $unkonw_h);
 }
 ?>
